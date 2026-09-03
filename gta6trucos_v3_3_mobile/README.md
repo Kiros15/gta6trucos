@@ -34,3 +34,11 @@ Se integran embeds responsive de YouTube con material oficial de Rockstar Games 
 2. Añadirlos en `assets/ads.js` (CONFIG) o en los atributos `data-ad-slot` de los espacios.
 3. Publicar en la raíz `/ads.txt` la línea oficial proporcionada por AdSense.
 4. Configurar el consentimiento de usuarios de EEE/Reino Unido/Suiza según los requisitos vigentes antes de servir anuncios personalizados.
+
+
+### V3.4.1 — AdSense verification
+- Added the exact AdSense publisher script and `google-adsense-account` meta tag to the `<head>` of all pages containing ad slots.
+- Publisher ID: `ca-pub-2781521462195370`.
+- `ads.js` now only renders ad units; it does not dynamically load the AdSense library.
+- `ads.txt` contains the publisher authorization line.
+- This matches Google's recommended connection method: place the AdSense code between `<head>` and `</head>`.
