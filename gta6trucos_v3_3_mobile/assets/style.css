@@ -64,3 +64,9 @@ html{scroll-padding-top:120px}body{overflow-x:hidden;-webkit-text-size-adjust:10
 .seo-copy{max-width:900px;color:#aaa7b7;font-size:14px;line-height:1.75}
 .seo-copy p{margin:0 0 16px}.seo-copy h3{color:#fff;font-size:18px;margin:22px 0 8px}.seo-copy strong{color:#f4d5e8}
 @media(max-width:720px){.seo-thumb{min-height:190px}.seo-copy{font-size:12px;line-height:1.7}.seo-copy h3{font-size:16px}}
+
+
+/* V4.0 — official Rockstar Games imagery */
+.official-thumb{background-size:cover;background-position:center;min-height:190px;border-radius:14px;overflow:hidden;position:relative}
+.official-thumb:after{content:"Imagen oficial · Rockstar Games";position:absolute;left:10px;bottom:10px;background:rgba(0,0,0,.72);color:#fff;font-size:.72rem;padding:5px 8px;border-radius:6px}
+@media(max-width:700px){.official-thumb{min-height:165px}}
