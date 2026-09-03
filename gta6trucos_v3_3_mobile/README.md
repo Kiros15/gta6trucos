@@ -46,3 +46,6 @@ Se integran embeds responsive de YouTube con material oficial de Rockstar Games 
 
 ## V3.5 — Amazon Afiliados
 Se añade un bloque responsive de equipamiento recomendado con 5 enlaces de afiliado de Amazon, disclosure y atributos sponsored/nofollow.
+
+
+V4.2: official Rockstar screenshots are rendered with real <img> elements rather than CSS background images, with lazy loading and fallback.
