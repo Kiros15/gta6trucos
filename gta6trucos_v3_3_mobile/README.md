@@ -14,3 +14,7 @@ Incluye:
 
 ## Vercel
 Sitio estático HTML/CSS/JS. No requiere build. El Root Directory debe apuntar a esta carpeta cuando se suba al repositorio.
+
+
+## V3.3.1 — Integración de vídeo
+Se integran embeds responsive de YouTube con material oficial de Rockstar Games en páginas estratégicas: inicio, personajes, mapa, vehículos, guías, noticias y el hub de vídeos. Se usan iframes lazy-loaded y diseño mobile-first.
