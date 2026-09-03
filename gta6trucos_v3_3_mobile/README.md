@@ -18,3 +18,19 @@ Sitio estático HTML/CSS/JS. No requiere build. El Root Directory debe apuntar a
 
 ## V3.3.1 — Integración de vídeo
 Se integran embeds responsive de YouTube con material oficial de Rockstar Games en páginas estratégicas: inicio, personajes, mapa, vehículos, guías, noticias y el hub de vídeos. Se usan iframes lazy-loaded y diseño mobile-first.
+
+
+## V3.4 — Monetización preparada
+
+- Espacios publicitarios responsive en zonas estratégicas de las páginas de contenido.
+- Preparación para Google AdSense mediante `assets/ads.js`.
+- No contiene un Publisher ID inventado: se configura después de la aprobación de AdSense.
+- `ads.txt` queda preparado como recordatorio para publicar la línea oficial proporcionada por AdSense.
+- Las páginas legales y de contacto no llevan espacios publicitarios.
+- Los anuncios se distinguen claramente del contenido como “PUBLICIDAD”.
+
+### Activación
+1. Obtener la Publisher ID y los IDs de las unidades en AdSense.
+2. Añadirlos en `assets/ads.js` (CONFIG) o en los atributos `data-ad-slot` de los espacios.
+3. Publicar en la raíz `/ads.txt` la línea oficial proporcionada por AdSense.
+4. Configurar el consentimiento de usuarios de EEE/Reino Unido/Suiza según los requisitos vigentes antes de servir anuncios personalizados.

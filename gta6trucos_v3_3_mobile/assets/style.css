@@ -29,3 +29,15 @@ html{scroll-padding-top:120px}body{overflow-x:hidden;-webkit-text-size-adjust:10
 .video-links{display:flex;gap:10px;flex-wrap:wrap;margin-top:18px}
 .compact-video{padding-top:28px;padding-bottom:28px}
 @media(max-width:720px){.video-panel{padding:14px}.video-source{font-size:10px;align-items:flex-start;flex-direction:column;gap:6px}.video-links{display:grid;grid-template-columns:1fr}.video-links .btn{width:100%;text-align:center}}
+
+/* V3.4 — Monetization-ready ad spaces */
+.ad-slot{width:100%;min-height:118px;margin:0 auto;padding:10px 0;display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden}
+.ad-slot:before{content:"PUBLICIDAD";font-size:9px;letter-spacing:.16em;color:#666174;font-weight:800}
+.ad-slot:has(> .adsbygoogle):before{display:none}
+.ad-slot .adsbygoogle{width:100%;min-height:90px}
+.ad-slot-inner{width:min(100%,970px)}
+.ad-slot.sidebar{min-height:280px}
+.ad-slot.sidebar .adsbygoogle{min-height:250px}
+.ad-slot + .section{padding-top:38px}
+@media(min-width:721px){.ad-slot{min-height:150px}.ad-slot .adsbygoogle{min-height:90px}.ad-slot.sidebar{min-height:280px}}
+@media(max-width:720px){.ad-slot{min-height:108px;padding:8px 0}.ad-slot + .section{padding-top:28px}.ad-slot .adsbygoogle{min-height:90px}}
