@@ -57,3 +57,10 @@ html{scroll-padding-top:120px}body{overflow-x:hidden;-webkit-text-size-adjust:10
 .affiliate-btn span{font-size:14px;line-height:1}
 .affiliate-disclosure{margin:16px 0 0;color:#777384;font-size:10px;line-height:1.5}
 @media(max-width:720px){.affiliate-grid{grid-template-columns:1fr;gap:10px}.affiliate-card{min-height:0;padding:15px;gap:12px}.affiliate-icon{width:52px;height:52px;flex-basis:52px;font-size:25px;border-radius:13px}.affiliate-card h3{font-size:17px}.affiliate-card p{font-size:11px;margin-bottom:12px}.affiliate-btn{width:100%;justify-content:center;min-height:44px}.affiliate-disclosure{font-size:9px}}
+
+/* V3.9 — Visual SEO cards */
+.seo-thumb{background-size:cover;background-position:center;min-height:190px;background-color:#10111c}
+.seo-content{background:linear-gradient(180deg,#0a0911,#0d0b16)}
+.seo-copy{max-width:900px;color:#aaa7b7;font-size:14px;line-height:1.75}
+.seo-copy p{margin:0 0 16px}.seo-copy h3{color:#fff;font-size:18px;margin:22px 0 8px}.seo-copy strong{color:#f4d5e8}
+@media(max-width:720px){.seo-thumb{min-height:190px}.seo-copy{font-size:12px;line-height:1.7}.seo-copy h3{font-size:16px}}
