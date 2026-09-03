@@ -42,3 +42,7 @@ Se integran embeds responsive de YouTube con material oficial de Rockstar Games 
 - `ads.js` now only renders ad units; it does not dynamically load the AdSense library.
 - `ads.txt` contains the publisher authorization line.
 - This matches Google's recommended connection method: place the AdSense code between `<head>` and `</head>`.
+
+
+## V3.5 — Amazon Afiliados
+Se añade un bloque responsive de equipamiento recomendado con 5 enlaces de afiliado de Amazon, disclosure y atributos sponsored/nofollow.

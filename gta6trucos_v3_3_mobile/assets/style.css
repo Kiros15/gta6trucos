@@ -41,3 +41,19 @@ html{scroll-padding-top:120px}body{overflow-x:hidden;-webkit-text-size-adjust:10
 .ad-slot + .section{padding-top:38px}
 @media(min-width:721px){.ad-slot{min-height:150px}.ad-slot .adsbygoogle{min-height:90px}.ad-slot.sidebar{min-height:280px}}
 @media(max-width:720px){.ad-slot{min-height:108px;padding:8px 0}.ad-slot + .section{padding-top:28px}.ad-slot .adsbygoogle{min-height:90px}}
+
+/* V3.5 — Amazon affiliate product section */
+.gear-section{background:linear-gradient(180deg,#090811,#0d0a16 48%,#090811);border-top:1px solid #22182e;border-bottom:1px solid #22182e}
+.affiliate-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+.affiliate-card{position:relative;display:flex;gap:16px;min-height:205px;padding:20px;border:1px solid #382543;border-radius:18px;background:linear-gradient(145deg,#111222,#0b0c15);overflow:hidden;box-shadow:0 14px 35px rgba(0,0,0,.18)}
+.affiliate-card.featured{border-color:#71315d;box-shadow:0 16px 45px rgba(255,70,177,.10)}
+.affiliate-icon{width:62px;height:62px;flex:0 0 62px;display:grid;place-items:center;border-radius:16px;background:linear-gradient(145deg,#1e1530,#32132c);border:1px solid #5a2d51;font-size:30px}
+.affiliate-content{min-width:0;display:flex;flex-direction:column;align-items:flex-start}
+.affiliate-tag{font-size:9px;letter-spacing:.14em;color:#ff6cbd;font-weight:900}
+.affiliate-card h3{margin:7px 0 7px;font-size:19px;line-height:1.15}
+.affiliate-card p{margin:0 0 15px;color:#aaa7b7;font-size:12px;line-height:1.5;max-width:560px}
+.affiliate-btn{display:inline-flex;align-items:center;gap:10px;margin-top:auto;padding:11px 14px;border-radius:10px;background:#ff4db4;color:#090811;text-decoration:none;font-weight:900;font-size:10px;letter-spacing:.04em;transition:transform .18s ease,filter .18s ease}
+.affiliate-btn:hover{transform:translateY(-2px);filter:brightness(1.08)}
+.affiliate-btn span{font-size:14px;line-height:1}
+.affiliate-disclosure{margin:16px 0 0;color:#777384;font-size:10px;line-height:1.5}
+@media(max-width:720px){.affiliate-grid{grid-template-columns:1fr;gap:10px}.affiliate-card{min-height:0;padding:15px;gap:12px}.affiliate-icon{width:52px;height:52px;flex-basis:52px;font-size:25px;border-radius:13px}.affiliate-card h3{font-size:17px}.affiliate-card p{font-size:11px;margin-bottom:12px}.affiliate-btn{width:100%;justify-content:center;min-height:44px}.affiliate-disclosure{font-size:9px}}
