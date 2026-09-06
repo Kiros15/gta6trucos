@@ -1,1 +1,9 @@
-{"name":"GTA6Trucos","short_name":"GTA6Trucos","start_url":"/","display":"standalone","theme_color":"#07070b","background_color":"#07070b","lang":"es"}
+{
+  "name": "GTA6Trucos.com",
+  "short_name": "GTA6Trucos",
+  "start_url": "/",
+  "display": "standalone",
+  "theme_color": "#090812",
+  "background_color": "#090812",
+  "lang": "es"
+}

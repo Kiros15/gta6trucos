@@ -1,6 +1,16 @@
-# GTA6Trucos v4.3 Definitiva
-Actualizada: 6 septiembre 2026.
+# GTA6Trucos.com — ES / EN
 
-Proyecto completo, mobile-first y preparado para Vercel. Incluye contenido nuevo del Extended Look de GTA VI, estructura SEO, categorías, páginas de contenido, galería oficial y zonas para monetización.
+Bilingual GitHub/Vercel-ready static website structure.
 
-Fuentes principales: Rockstar Games (galería y Extended Look). Las imágenes oficiales se cargan desde URLs oficiales de Rockstar para evitar copias innecesarias.
+## Language behavior
+- `/en/` is the English version.
+- `/es/` is the Spanish version.
+- The language selector lets users switch manually.
+- A lightweight client-side heuristic redirects visitors whose browser language is `en-US`/US-like to `/en/` when they have not manually selected a language.
+- Direct `/es/` and `/en/` URLs remain stable for SEO.
+
+## Deploy
+Upload the repository to GitHub and connect it to Vercel. No build command is required.
+
+## Important
+The `assets/img/` directory is intentionally present for the project's approved imagery. Add the existing official/original image assets there when replacing the prior project version.
