@@ -1,1 +1,203 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="index,follow"><script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2781521462195370" crossorigin="anonymous"></script><title>GTA6Trucos · News</title><meta id="desc" name="description" content="Newss de GTA VI en GTA6Trucos"><link id="canonical" rel="canonical" href="https://gta6trucos.com/es/noticia/"><link rel="stylesheet" href="../../assets/style.css"><link rel="icon" href="../../favicon.svg" type="image/svg+xml"></head><body><header><a class="logo" href="../">GTA6<span>TRUCOS</span></a><nav><a href="../noticias/">Newss</a><a href="../">Home</a></nav><div class="langs"><a id="enlink" href="../../en/noticia/">🇺🇸 EN</a></div></header><main class="page article-page"><a class="back-link" href="../noticias/">← Back to news</a><article id="article" class="news-article"><p>Cargando noticia…</p></article></main><footer><strong>GTA6TRUCOS</strong><span>© 2026 · Fan site · Rockstar Games is not affiliated with this website.</span></footer><script src="../../assets/app.js"></script><script>(async()=>{const slug=location.pathname.split('/').filter(Boolean).pop();try{const r=await fetch('/api/news?lang=en&slug='+encodeURIComponent(slug));const j=await r.json();const n=j.news&&j.news[0];if(!n)throw 0;const safe=s=>String(s??'').replace(/[&<>"']/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[m]));document.title=n.title_en+' — GTA6Trucos';document.getElementById('desc').content=n.excerpt_en||'';document.getElementById('canonical').href=location.href;document.getElementById('enlink').href='/es/noticia/'+n.slug_es+'/';const image=n.image?'<img class="article-image" src="'+safe(n.image)+'" alt="'+safe(n.title_en)+'">':'';document.getElementById('article').innerHTML=image+'<span class="eyebrow">'+safe(n.category||'GTA VI')+'</span><h1>'+safe(n.title_en)+'</h1><p class="article-date">'+new Date(n.published_at).toLocaleDateString('en-US',{day:'numeric',month:'long',year:'numeric'})+'</p>'+(n.excerpt_en?'<p class="article-lead">'+safe(n.excerpt_en)+'</p>':'')+'<div class="ad-container" aria-label="Publicidad"><span>Publicidad</span></div>'+n.content_en+(n.source_name?'<p class="source-note">Source: '+safe(n.source_name)+(n.source_url?' · <a href="'+safe(n.source_url)+'" rel="nofollow noopener" target="_blank">source</a>':'')+'</p>':'');}catch(e){document.getElementById('article').innerHTML='<h1>News no encontrada</h1><p>Esta noticia todavía no existe o no está publicada.</p>';}})();</script></body></html>
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="robots" content="index,follow">
+
+  <script async
+    src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2781521462195370"
+    crossorigin="anonymous"></script>
+
+  <title>GTA6Trucos · News</title>
+
+  <meta id="desc"
+        name="description"
+        content="GTA VI news on GTA6Trucos">
+
+  <link id="canonical"
+        rel="canonical"
+        href="https://gta6trucos.com/en/noticia/">
+
+  <link rel="stylesheet" href="/assets/style.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+</head>
+
+<body>
+
+<header>
+  <a class="logo" href="/en/">
+    GTA6<span>TRUCOS</span>
+  </a>
+
+  <nav>
+    <a href="/en/noticias/">News</a>
+    <a href="/en/">Home</a>
+  </nav>
+
+  <div class="langs">
+    <a id="eslink" href="/es/noticias/">🇪🇸 ES</a>
+  </div>
+</header>
+
+<main class="page article-page">
+
+  <a class="back-link" href="/en/noticias/">
+    ← Back to news
+  </a>
+
+  <article id="article" class="news-article">
+    <p>Loading news…</p>
+  </article>
+
+</main>
+
+<footer>
+  <strong>GTA6TRUCOS</strong>
+  <span>
+    © 2026 · Fan site · Rockstar Games is not affiliated with this website.
+  </span>
+</footer>
+
+<script src="/assets/app.js"></script>
+
+<script>
+(async () => {
+
+  const parts = location.pathname
+    .split('/')
+    .filter(Boolean);
+
+  const slug = decodeURIComponent(
+    parts[parts.length - 1] || ''
+  );
+
+  try {
+
+    if (!slug || slug === 'noticia') {
+      throw new Error('invalid_slug');
+    }
+
+    const r = await fetch(
+      '/api/news?lang=en&slug=' +
+      encodeURIComponent(slug)
+    );
+
+    if (!r.ok) {
+      throw new Error('api_error');
+    }
+
+    const j = await r.json();
+
+    const n = j.news && j.news[0];
+
+    if (!n) {
+      throw new Error('news_not_found');
+    }
+
+    const safe = s =>
+      String(s ?? '').replace(
+        /[&<>"']/g,
+        m => ({
+          '&': '&amp;',
+          '<': '&lt;',
+          '>': '&gt;',
+          '"': '&quot;',
+          "'": '&#39;'
+        }[m])
+      );
+
+    document.title =
+      n.title_en + ' — GTA6Trucos';
+
+    document.getElementById('desc').content =
+      n.excerpt_en || '';
+
+    document.getElementById('canonical').href =
+      'https://gta6trucos.com/en/noticia/' +
+      encodeURIComponent(n.slug_en) +
+      '/';
+
+    document.getElementById('eslink').href =
+      '/es/noticia/' +
+      encodeURIComponent(n.slug_es) +
+      '/';
+
+    const image =
+      '<img class="article-image" ' +
+      'src="' + safe(n.image) + '" ' +
+      'alt="' + safe(n.title_en) + '">';
+
+    document.getElementById('article').innerHTML =
+
+      image +
+
+      '<span class="eyebrow">' +
+      safe(n.category || 'GTA VI') +
+      '</span>' +
+
+      '<h1>' +
+      safe(n.title_en) +
+      '</h1>' +
+
+      '<p class="article-date">' +
+      new Date(n.published_at)
+        .toLocaleDateString(
+          'en-US',
+          {
+            day: 'numeric',
+            month: 'long',
+            year: 'numeric'
+          }
+        ) +
+      '</p>' +
+
+      (
+        n.excerpt_en
+          ? '<p class="article-lead">' +
+            safe(n.excerpt_en) +
+            '</p>'
+          : ''
+      ) +
+
+      '<div class="ad-container" aria-label="Advertisement">' +
+      '<span>Advertisement</span>' +
+      '</div>' +
+
+      n.content_en +
+
+      (
+        n.source_name
+          ? '<p class="source-note">' +
+            'Source: ' +
+            safe(n.source_name) +
+            (
+              n.source_url
+                ? ' · <a href="' +
+                  safe(n.source_url) +
+                  '" rel="nofollow noopener" ' +
+                  'target="_blank">view source</a>'
+                : ''
+            ) +
+            '</p>'
+          : ''
+      );
+
+  } catch (e) {
+
+    console.error(
+      'Error loading dynamic news:',
+      e
+    );
+
+    document.getElementById('article').innerHTML =
+      '<h1>News not found</h1>' +
+      '<p>This article does not exist yet or is not published.</p>';
+
+  }
+
+})();
+</script>
+
+</body>
+</html>
