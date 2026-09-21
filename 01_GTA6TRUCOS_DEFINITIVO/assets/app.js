@@ -26,3 +26,43 @@ document.querySelectorAll('[data-amazon-product]').forEach(a=>a.addEventListener
     }
   }).catch(()=>{});
 })();
+
+// Weekly GTA VI video picks: every item plays on this page.
+(function () {
+  const host = document.querySelector('[data-weekly-videos]');
+  if (!host) return;
+  const en = document.documentElement.lang.startsWith('en');
+  const esc = s => String(s ?? '').replace(/[&<>"']/g, c => ({ '&':'&amp;', '<':'&lt;', '>':'&gt;', '"':'&quot;', "'":'&#39;' }[c]));
+  const status = host.querySelector('[data-video-status]');
+  fetch('/api/weekly-videos', { headers: { Accept: 'application/json' } })
+    .then(r => { if (!r.ok) throw new Error('unavailable'); return r.json(); })
+    .then(data => {
+      if (!data.videos?.length) { status.textContent = en ? 'No embeddable GTA VI videos published in the last seven days.' : 'No hay vídeos de GTA VI incrustables publicados en los últimos siete días.'; return; }
+      const videos = data.videos;
+      const player = host.querySelector('[data-video-player]');
+      const title = host.querySelector('[data-featured-title]');
+      const meta = host.querySelector('[data-featured-meta]');
+      const list = host.querySelector('[data-video-list]');
+      const date = host.querySelector('[data-video-date]');
+      const format = new Intl.NumberFormat(en ? 'en-US' : 'es-ES');
+      function select(index) {
+        const v = videos[index];
+        player.src = 'https://www.youtube-nocookie.com/embed/' + encodeURIComponent(v.id);
+        player.title = v.title;
+        title.textContent = v.title;
+        meta.textContent = v.channel + ' · ' + format.format(v.views) + (en ? ' views' : ' visualizaciones');
+        list.querySelectorAll('button').forEach((b, i) => b.setAttribute('aria-current', String(i === index)));
+      }
+      list.innerHTML = videos.map((v, i) => '<li><button type="button" data-video-index="' + i + '"><span class="video-rank">' + (i + 1) + '</span><img loading="lazy" src="' + esc(v.thumbnail) + '" alt=""><span><strong>' + esc(v.title) + '</strong><small>' + esc(v.channel) + ' · ' + format.format(v.views) + (en ? ' views' : ' visualizaciones') + '</small></span></button></li>').join('');
+      list.addEventListener('click', event => {
+        const button = event.target.closest('[data-video-index]');
+        if (button) select(Number(button.dataset.videoIndex));
+      });
+      date.textContent = (en ? 'Views checked ' : 'Visualizaciones comprobadas ') + new Date(data.updatedAt).toLocaleString(en ? 'en-US' : 'es-ES');
+      status.hidden = true;
+      host.querySelector('[data-video-content]').hidden = false;
+      select(0);
+    })
+    .catch(() => { status.textContent = en ? 'Weekly videos are temporarily unavailable.' : 'Los vídeos de la semana no están disponibles temporalmente.'; });
+})();
+
