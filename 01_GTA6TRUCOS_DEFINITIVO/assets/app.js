@@ -21,7 +21,7 @@ document.querySelectorAll('[data-amazon-product]').forEach(a=>a.addEventListener
     const homeGrid=document.querySelector('.news-grid');
     if(homeGrid && !cards){
       const host=homeGrid.querySelector('.news-list')||homeGrid;
-      const html=data.news.slice(0,5).map(n=>`<article class="dynamic-news-card"><a href="${lang==='en'?'/en/noticia/':'/es/noticia/'}${esc(lang==='en'?n.slug_en:n.slug_es)}/"><div><strong>${esc(lang==='en'?n.title_en:n.title_es)}</strong><span>${esc(lang==='en'?n.excerpt_en:n.excerpt_es||'')}</span></div></a></article>`).join('');
+      const html=data.news.slice(0,5).map(n=>{const title=lang==='en'?n.title_en:n.title_es;const excerpt=lang==='en'?n.excerpt_en:n.excerpt_es||'';const fallback='/assets/images/Vice_City_04.jpg';return `<article class="dynamic-news-card"><a href="${lang==='en'?'/en/noticia/':'/es/noticia/'}${esc(lang==='en'?n.slug_en:n.slug_es)}/"><img loading="lazy" src="${esc(imgPath(n.image)||fallback)}" onerror="this.onerror=null;this.src='${fallback}'" alt="${esc(title)}"><div><strong>${esc(title)}</strong><span>${esc(excerpt)}</span></div></a></article>`}).join('');
       host.insertAdjacentHTML('afterbegin',html);
     }
   }).catch(()=>{});
@@ -65,4 +65,3 @@ document.querySelectorAll('[data-amazon-product]').forEach(a=>a.addEventListener
     })
     .catch(() => { status.textContent = en ? 'Weekly videos are temporarily unavailable.' : 'Los vídeos de la semana no están disponibles temporalmente.'; });
 })();
-
