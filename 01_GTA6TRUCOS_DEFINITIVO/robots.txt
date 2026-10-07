@@ -1,3 +1,6 @@
 User-agent: *
 Allow: /
+Disallow: /es/noticia/
+Disallow: /en/noticia/
 Sitemap: https://gta6trucos.com/sitemap.xml
+
