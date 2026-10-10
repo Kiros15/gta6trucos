@@ -1,1 +1,0 @@
-const q=document.querySelector('#search'); if(q){q.addEventListener('keydown',e=>{if(e.key==='Enter'&&q.value.trim()) location.href='/pages/noticias/buscar.html?q='+encodeURIComponent(q.value.trim())})}
