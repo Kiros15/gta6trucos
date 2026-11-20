@@ -24,6 +24,27 @@ create index if not exists news_published_date_idx on public.news (published, pu
 create index if not exists news_slug_es_idx on public.news (slug_es);
 create index if not exists news_slug_en_idx on public.news (slug_en);
 
+-- A published story always has a cover. The unique partial index makes a
+-- cover exclusive among published stories, including concurrent API calls.
+do $$
+begin
+  if not exists (
+    select 1 from pg_constraint
+    where conname = 'news_published_requires_cover_image'
+      and conrelid = 'public.news'::regclass
+  ) then
+    alter table public.news add constraint news_published_requires_cover_image
+      check (not published or nullif(btrim(image), '') is not null);
+  end if;
+end $$;
+
+create unique index if not exists news_published_cover_image_unique_idx
+  on public.news ((case
+    when btrim(image) ~ '^(https?:)?//' then btrim(image)
+    else '/' || ltrim(btrim(image), '/')
+  end))
+  where published and nullif(btrim(image), '') is not null;
+
 alter table public.news enable row level security;
 drop policy if exists "Public can read published news" on public.news;
 create policy "Public can read published news" on public.news for select using (published = true);
