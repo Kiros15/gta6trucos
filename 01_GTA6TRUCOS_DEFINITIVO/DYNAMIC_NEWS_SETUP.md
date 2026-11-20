@@ -6,6 +6,7 @@ La web conserva sus páginas estáticas y sus imágenes. La capa dinámica es ad
 1. Crea/abre el proyecto Supabase.
 2. SQL Editor → ejecuta `supabase/schema.sql`.
 3. Después ejecuta `supabase/seed-existing.sql` para migrar las 6 noticias existentes ES/EN.
+4. Si la tabla ya existía, vuelve a ejecutar `supabase/schema.sql`. Añade la regla de integridad que exige portada para cada noticia publicada y evita que una portada publicada se repita. El script se detendrá de forma segura si ya existen portadas publicadas duplicadas; corrige esos datos antes de volver a ejecutarlo.
 
 ## 2. Vercel
 Añade estas variables de entorno (Production y Preview si procede):
@@ -17,6 +18,9 @@ Vercel volverá a desplegar al guardar las variables.
 
 ## 3. Publicar
 Abre `/admin/`, introduce el token y crea la noticia. Las noticias publicadas aparecen automáticamente en la sección de noticias y portada. Las nuevas páginas se sirven en `/es/noticia/slug/` y `/en/noticia/slug/`.
+
+## Integridad de portadas
+Una noticia publicada requiere una imagen de portada. La API lo valida antes de insertar, y Supabase lo garantiza con una restricción y un índice único parcial. Por ello también quedan cubiertas peticiones manuales, automatizaciones y dos publicaciones simultáneas: una misma portada solo puede pertenecer a una noticia publicada.
 
 ## Seguridad
 El service-role key nunca se expone al navegador. El endpoint público solo devuelve noticias con `published=true`. El panel exige `NEWS_ADMIN_TOKEN`.
